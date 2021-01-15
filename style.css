@@ -7,3 +7,10 @@ body {
     width: 100vw;
     font-size: 12px;
   }
+  .position--abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
