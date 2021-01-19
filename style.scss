@@ -59,3 +59,37 @@ body {
       bottom: 0;
     }
   }
+  .plane {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    background: transparent;
+    position: relative;
+
+    @media screen and (max-width: 550px) {
+      flex: 1;
+      height: 100%;
+    }
+
+    &--content {
+      background: white;
+      background-size: cover;
+
+      @media screen and (max-width: 550px) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+        height: 100%;
+      }
+
+      position: relative;
+
+      //       &:nth-child(2n){
+
+      //         background: #f9f9f9;
+      //       }
+    }
+  }
+}
