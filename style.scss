@@ -186,3 +186,19 @@ body {
     box-shadow: 0 0 0 #888;
     text-decoration: none;
     color: white;
+    & > * {
+      position: absolute;
+      user-select: none;
+      outline: none;
+    }
+    & > div {
+      transition: all 200ms linear;
+      display: flex;
+      opacity: 0;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      z-index: 20;
+      position: relative;
+    }
