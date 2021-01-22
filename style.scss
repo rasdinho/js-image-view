@@ -226,3 +226,31 @@ body {
         padding-left: 4px;
       }
     }
+
+    &:before {
+      content: "";
+      background: #000;
+      opacity: 0;
+      transition: all 200ms linear;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #bbb;
+
+      &:before {
+        opacity: 0.3;
+      }
+
+      & > div {
+        opacity: 1;
+      }
+    }
+  }
+}
