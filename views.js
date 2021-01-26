@@ -23,3 +23,25 @@ let $plane = moveContainer.getElementsByClassName("plane")[0];
 
 let halfContainerW = Math.ceil(moveContainer.clientWidth / 2);
 let halfContainerH = Math.ceil(moveContainer.clientHeight / 2);
+
+const checkAspectRatio = () => {
+    // Handle aspect ratio
+    aspectRatio =
+      document.body.clientWidth > document.body.clientHeight
+        ? "landscape"
+        : "portrait";
+  };
+  
+  checkAspectRatio;
+  
+  // Duplicator
+  const duplicate = original => {
+    // handle empty params
+    if (typeof original === "undefined") {
+      original = $plane.getElementsByClassName("plane--content")[0];
+    }
+  
+    const clone = original.cloneNode(true); // "deep" clone
+    original.parentNode.appendChild(clone);
+  };
+  
