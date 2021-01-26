@@ -17,3 +17,9 @@ const speedFactor = 0.8;
 let navigatorActive = false;
 
 let aspectRatio = "landscape";
+
+let moveContainer = document.getElementsByClassName("move-container")[0];
+let $plane = moveContainer.getElementsByClassName("plane")[0];
+
+let halfContainerW = Math.ceil(moveContainer.clientWidth / 2);
+let halfContainerH = Math.ceil(moveContainer.clientHeight / 2);
