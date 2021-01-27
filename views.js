@@ -45,3 +45,16 @@ const checkAspectRatio = () => {
     original.parentNode.appendChild(clone);
   };
   
+// Reducer
+const reduce = original => {
+    // handle empty params
+    if (typeof original === "undefined") {
+      original = $plane.getElementsByClassName("plane--content")[0];
+    }
+  
+    const clone = original.cloneNode(true); // "deep" clone
+  
+    $plane.innerHTML = "";
+    $plane.appendChild(clone);
+  };
+  
