@@ -57,4 +57,26 @@ const reduce = original => {
     $plane.innerHTML = "";
     $plane.appendChild(clone);
   };
+
+// What appens on mouse leave event
+const mouseLeaveHandler = e => {
+    if (timer) {
+      // Clear only if timer was set
+      window.clearTimeout(timer);
+      timer = false;
+    }
+  };
   
+  // What appens on mouse enter event
+  const mouseEnterHandler = e => {
+    let el;
+    if (typeof e === "undefined") {
+      el = moveContainer;
+    } else {
+      el = e.target;
+    }
+  
+    if (distance > distanceLimit && !timer) {
+      moveLoop($plane);
+    }
+  };
