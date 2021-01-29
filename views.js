@@ -80,3 +80,13 @@ const mouseLeaveHandler = e => {
       moveLoop($plane);
     }
   };
+  const moveLoop = $el => {
+    // handle undefined
+    if (typeof $el === "undefined") {
+      $el = $plane;
+    }
+    move($el);
+    timer = setTimeout($el => {
+      moveLoop($el);
+    }, refreshDelay);
+  };
