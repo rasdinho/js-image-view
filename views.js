@@ -90,3 +90,16 @@ const mouseLeaveHandler = e => {
       moveLoop($el);
     }, refreshDelay);
   };
+
+  const changeSpeed = () => {
+  let maxRadius = halfContainerW;
+  if (halfContainerH > halfContainerW) {
+    maxRadius = halfContainerH;
+  }
+  speedPercentage = Math.ceil(distance / (maxRadius - distanceLimit) * 100);
+
+  let speed =
+    refreshBase +
+    refreshDelta -
+    Math.ceil(speedPercentage / speedFactor) +
+    refreshBase;
