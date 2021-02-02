@@ -113,3 +113,12 @@ const mouseLeaveHandler = e => {
 
   refreshDelay = speed;
 };
+// Calculate distance from element center
+const calculateDistance = (elem, mouseX, mouseY) => {
+  return Math.floor(
+    Math.sqrt(
+      Math.pow(mouseX - (getOffset(elem).left + elem.clientWidth / 2), 2) +
+        Math.pow(mouseY - (getOffset(elem).top + elem.clientHeight / 2), 2)
+    )
+  );
+};
