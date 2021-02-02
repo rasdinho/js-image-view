@@ -103,3 +103,13 @@ const mouseLeaveHandler = e => {
     refreshDelta -
     Math.ceil(speedPercentage / speedFactor) +
     refreshBase;
+// hadle speed range
+  if (speed < refreshBase) {
+    speed = refreshBase;
+  }
+  if (speed > refreshBase + refreshDelta) {
+    speed = refreshBase + refreshDelta;
+  }
+
+  refreshDelay = speed;
+};
