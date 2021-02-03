@@ -133,3 +133,14 @@ const getOffset = el => {
   }
   return { top: _y, left: _x };
 };
+// Mouse move actions
+const mouseMoveHandler = e => {
+  mX = e.pageX;
+  mY = e.pageY;
+  distance = calculateDistance(moveContainer, mX, mY);
+
+  mouseX = mX - getOffset(moveContainer).left - halfContainerW;
+  mouseY = mY - getOffset(moveContainer).top - halfContainerH;
+
+  xForward = mouseX < 0;
+  yForward = mouseY < 0;
