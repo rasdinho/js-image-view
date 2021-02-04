@@ -144,3 +144,13 @@ const mouseMoveHandler = e => {
 
   xForward = mouseX < 0;
   yForward = mouseY < 0;
+// Get max distance radius
+  changeSpeed();
+
+  // Stand-by area
+  if (distance <= distanceLimit) {
+    mouseLeaveHandler();
+  } else {
+    mouseEnterHandler();
+  }
+};
