@@ -174,3 +174,21 @@ const move = (el, x, y) => {
     } else {
       tX = Math.ceil(moveContainer.clientWidth * -1);
     }
+    // Y
+    const yBackwardLimit = Math.ceil(moveContainer.clientHeight * 2 * -1);
+    if (tY < 0 && tY > yBackwardLimit) {
+      if (Math.abs(mouseY) > axisTreshold) {
+        if (!yForward) {
+          signedIncr = incr * -1;
+        } else {
+          signedIncr = incr;
+        }
+        tY = tY + signedIncr;
+      }
+    } else {
+      tY = Math.ceil(moveContainer.clientHeight * -1);
+    }
+  } else {
+    tX = x;
+    tY = y;
+  }
