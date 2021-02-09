@@ -197,3 +197,14 @@ const move = (el, x, y) => {
   el.style.webkitTransform = transform;
   el.style.mozTransform = transform;
 };
+
+// Refresh
+const refresh = (shoulMoveToStartingPosition, container) => {
+  // handle empty params
+  if (typeof container === "undefined") {
+    container = moveContainer;
+  }
+  if (typeof shoulMoveToStartingPosition === "undefined") {
+    shoulMoveToStartingPosition = false;
+  }
+
