@@ -192,3 +192,8 @@ const move = (el, x, y) => {
     tX = x;
     tY = y;
   }
+  var transform = "translate3d(" + tX + "px," + tY + "px,0px)";
+  el.style.transform = transform;
+  el.style.webkitTransform = transform;
+  el.style.mozTransform = transform;
+};
