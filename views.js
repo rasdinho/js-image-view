@@ -154,3 +154,23 @@ const mouseMoveHandler = e => {
     mouseEnterHandler();
   }
 };
+// Move element 2D
+const move = (el, x, y) => {
+  //  tY = tY + incr;
+  let signedIncr = incr;
+
+  if (typeof x === "undefined" || typeof y === "undefined") {
+    // X
+    const xBackwardLimit = Math.ceil(moveContainer.clientWidth * 2 * -1);
+    if (tX < 0 && tX > xBackwardLimit) {
+      if (Math.abs(mouseX) > axisTreshold) {
+        if (!xForward) {
+          signedIncr = incr * -1;
+        } else {
+          signedIncr = incr;
+        }
+        tX = tX + signedIncr;
+      }
+    } else {
+      tX = Math.ceil(moveContainer.clientWidth * -1);
+    }
