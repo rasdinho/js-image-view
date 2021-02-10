@@ -221,3 +221,13 @@ const refresh = (shoulMoveToStartingPosition, container) => {
     // Listeners
     if (document.attachEvent) {
       container.attachEvent("onmousemove", mouseMoveHandler);
+      container.attachEvent("onmouseenter", mouseEnterHandler);
+      container.attachEvent("onmouseleave", mouseLeaveHandler);
+    } else {
+      container.addEventListener("mousemove", mouseMoveHandler);
+      container.addEventListener("mouseenter", mouseEnterHandler);
+      container.addEventListener("mouseleave", mouseLeaveHandler);
+    }
+  }
+  halfContainerW = Math.ceil(container.clientWidth / 2);
+  halfContainerH = Math.ceil(container.clientHeight / 2);
