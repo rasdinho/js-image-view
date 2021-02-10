@@ -207,4 +207,17 @@ const refresh = (shoulMoveToStartingPosition, container) => {
   if (typeof shoulMoveToStartingPosition === "undefined") {
     shoulMoveToStartingPosition = false;
   }
+// handle responsive
+  if (navigatorActive === false) {
+    // Duplicate content when needed
+    let $contents = $plane.getElementsByClassName("plane--content");
+    for (i = 0; i < 8; i++) {
+      duplicate($contents[0]);
+    }
 
+    shoulMoveToStartingPosition = true;
+    navigatorActive = true;
+
+    // Listeners
+    if (document.attachEvent) {
+      container.attachEvent("onmousemove", mouseMoveHandler);
