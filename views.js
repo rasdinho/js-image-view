@@ -231,3 +231,14 @@ const refresh = (shoulMoveToStartingPosition, container) => {
   }
   halfContainerW = Math.ceil(container.clientWidth / 2);
   halfContainerH = Math.ceil(container.clientHeight / 2);
+// Set plane dimensions (9x9 tiles area, 1 tile correspond to container viewport)
+  if (!$plane.hasAttribute("style")) {
+    $plane.setAttribute(
+      "style",
+      "width:" +
+        Math.ceil(container.clientWidth * 3) +
+        "px;height:" +
+        Math.ceil(container.clientHeight * 3) +
+        "px;"
+    );
+  }
