@@ -242,3 +242,21 @@ const refresh = (shoulMoveToStartingPosition, container) => {
         "px;"
     );
   }
+  $plane.style.width = Math.ceil(container.clientWidth * 3) + "px";
+  $plane.style.height = Math.ceil(container.clientHeight * 3) + "px";
+
+  $contents = $plane.getElementsByClassName("plane--content");
+  for (i = 0; i < $contents.length; i++) {
+    if (!$contents[i].hasAttribute("style")) {
+      $contents[i].setAttribute(
+        "style",
+        "width:" +
+          Math.ceil(container.clientWidth) +
+          "px;height:" +
+          Math.ceil(container.clientHeight) +
+          "px;"
+      );
+    }
+    $contents[i].style.width = Math.ceil(container.clientWidth) + "px";
+    $contents[i].style.height = Math.ceil(container.clientHeight) + "px";
+  }
