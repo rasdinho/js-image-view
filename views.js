@@ -260,3 +260,19 @@ const refresh = (shoulMoveToStartingPosition, container) => {
     $contents[i].style.width = Math.ceil(container.clientWidth) + "px";
     $contents[i].style.height = Math.ceil(container.clientHeight) + "px";
   }
+ // Plane position setup
+  if (shoulMoveToStartingPosition) {
+    // Centering 1st element
+    const rPosX = Math.ceil(container.clientWidth / 1.5);
+    const rPosY = Math.ceil(container.clientHeight / 1.3);
+
+    if (this !== undefined) {
+      this.move(
+        this.$plane,
+        Math.ceil(container.clientWidth * -1) - rPosX,
+        Math.ceil(container.clientHeight * -1) - rPosY
+      );
+    }
+  }
+};
+
