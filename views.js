@@ -289,3 +289,25 @@ const clear = container => {
   for (i = 0; i < $contents.length; i++) {
     $contents[i].removeAttribute("style");
   }
+  // Listeners
+  if (document.detachEvent) {
+    container.detachEvent("onmousemove", mouseMoveHandler);
+    container.detachEvent("onmouseenter", mouseEnterHandler);
+    container.detachEvent("onmouseleave", mouseLeaveHandler);
+  } else {
+    container.removeEventListener("mousemove", mouseMoveHandler);
+    container.removeEventListener("mouseenter", mouseEnterHandler);
+    container.removeEventListener("mouseleave", mouseLeaveHandler);
+  }
+
+  navigatorActive = false;
+};
+
+const resize = e => {
+  if (document.body.clientWidth > 550) {
+    refresh(false);
+  } else {
+    reduce();
+    clear();
+  }
+};
