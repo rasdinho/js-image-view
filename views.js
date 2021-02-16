@@ -311,3 +311,22 @@ const resize = e => {
     clear();
   }
 };
+
+// Init component
+const init = container => {
+  // handle empty params
+  if (typeof container === "undefined") {
+    container = moveContainer;
+  }
+
+  // setup sizes
+  if (document.body.clientWidth > 550) {
+    refresh(true); // also move plane at starting position
+  }
+
+  // Resize handle
+  resize();
+  window.onresize = () => resize();
+};
+
+init(moveContainer);
