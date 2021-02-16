@@ -276,3 +276,16 @@ const refresh = (shoulMoveToStartingPosition, container) => {
   }
 };
 
+// Clear
+const clear = container => {
+  // handle empty params
+  if (typeof container === "undefined") {
+    container = moveContainer;
+  }
+
+  $plane.removeAttribute("style");
+
+  $contents = $plane.getElementsByClassName("plane--content");
+  for (i = 0; i < $contents.length; i++) {
+    $contents[i].removeAttribute("style");
+  }
