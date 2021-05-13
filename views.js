@@ -330,3 +330,10 @@ const init = container => {
 };
 
 init(moveContainer);
+
+
+
+//   window.onresize = () => resize();
+// };
+
+// init(moveContainer);
